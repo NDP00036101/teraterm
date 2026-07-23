@@ -553,6 +553,7 @@ void PASCAL _ReadIniFile(const wchar_t *FName, PTTSet ts)
 
 	ts->Minimize = 0;
 	ts->HideWindow = 0;
+	ts->SuppressLogErrorDialog = 0;
 	ts->LogFlag = 0;			// Log flags
 	ts->FTFlag = 0;				// File transfer flags
 	ts->MenuFlag = 0;			// Menu flags
@@ -3839,6 +3840,9 @@ void PASCAL _ParseParam(wchar_t *Param, PTTSet ts, PCHAR DDETopic)
 		else if (_wcsicmp(Temp, L"/NOLOG") == 0) {	/* disable auto logging */
 			ts->LogFN[0] = '\0';
 			ts->LogAutoStart = 0;
+		}
+		else if (_wcsicmp(Temp, L"/NOLOGERRORDIALOG") == 0) {
+			ts->SuppressLogErrorDialog = 1;
 		}
 		else if (_wcsnicmp(Temp, L"/OSC52=", 7) == 0) {	/* Clipboard access */
 			ts->CtrlFlag &= ~CSF_CBMASK;

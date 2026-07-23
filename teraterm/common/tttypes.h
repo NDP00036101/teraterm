@@ -620,6 +620,9 @@ struct tttset {
 
 	// Experimental
 	BYTE ExperimentalTreePropertySheetEnable;
+
+	// Command line options
+	WORD SuppressLogErrorDialog;
 };
 
 typedef struct tttset TTTSet, *PTTSet;

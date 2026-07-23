@@ -18,7 +18,7 @@ TTERMPRO [ &lt;host&gt;[[:]&lt;TCP port#&gt;] | telnet://&lt;host&gt;[:&lt;TCP p
          [/F=&lt;setup file&gt;] [/FD=&lt;file transfer directory&gt;]
          [/H] [/I] [/K=&lt;keyboard setup file&gt;]
          [/KR=&lt;kanji code (receive)&gt;] [/KT=&lt;kanji code (transmit)&gt;]
-         [/L=&lt;log file&gt;] [/M=&lt;macro file&gt;] [/NOLOG]
+         [/L=&lt;log file&gt;] [/M=&lt;macro file&gt;] [/NOLOG] [/NOLOGERRORDIALOG]
          [/P=&lt;TCP port#&gt;] [/R=&lt;replay file&gt;] [/SPEED=&lt;speed&gt;] [/T=&lt;telnet flag&gt;]
          [/TEKICON=&lt;icon name&gt;] [/TIMEOUT=&lt;connecting timeout value&gt;]
          [/V] [/VTICON=&lt;icon name&gt;] [/W="&lt;window title&gt;"] [/WAITCOM]
@@ -191,6 +191,9 @@ TTERMPRO [ &lt;host&gt;[[:]&lt;TCP port#&gt;] | telnet://&lt;host&gt;[:&lt;TCP p
 
   <dt id="nolog">/NOLOG</dt>
   <dd>Start Tera Term without logging.</dd>
+
+  <dt id="nologerrordialog">/NOLOGERRORDIALOG</dt>
+  <dd>Do not display an error dialog when the automatic log file cannot be opened.</dd>
 
   <dt id="osc52">/OSC52=&lt;operations to permit&gt;</dt>
   <dd>
