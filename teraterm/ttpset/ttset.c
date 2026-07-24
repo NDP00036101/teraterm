@@ -3841,9 +3841,6 @@ void PASCAL _ParseParam(wchar_t *Param, PTTSet ts, PCHAR DDETopic)
 			ts->LogFN[0] = '\0';
 			ts->LogAutoStart = 0;
 		}
-		else if (_wcsicmp(Temp, L"/NOLOGERRORDIALOG") == 0) {
-			ts->SuppressLogErrorDialog = 1;
-		}
 		else if (_wcsnicmp(Temp, L"/OSC52=", 7) == 0) {	/* Clipboard access */
 			ts->CtrlFlag &= ~CSF_CBMASK;
 			if (_wcsicmp(&Temp[7], L"on") == 0 || _wcsicmp(&Temp[7], L"readwrite") == 0)
@@ -3899,6 +3896,7 @@ void PASCAL _ParseParam(wchar_t *Param, PTTSet ts, PCHAR DDETopic)
 		}
 		else if (_wcsicmp(Temp, L"/V") == 0) {	/* invisible */
 			ts->HideWindow = 1;
+			ts->SuppressLogErrorDialog = 1;
 		}
 		else if (_wcsnicmp(Temp, L"/W=", 3) == 0) {	/* Window title */
 		    char* TitleA = ToCharW(&Temp[3]);
